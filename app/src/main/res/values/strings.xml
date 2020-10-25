@@ -1,12 +1,19 @@
 <resources>
     <string name="app_name">JJinBang</string>
-    <string name="price">Price</string>
-    <string name="moreFilter">More Filter</string>
-    <string name="sizes">Sizes</string>
+
+    <string name="price">가격</string>
+    <string name="moreFilter">필터 설정</string>
+    <string name="sizes">방 크기</string>
     <string name="favorite">즐겨찾기</string>
     <string name="sell">방 등록</string>
     <string name="find">방 찾기</string>
     <string name="menu_home">홈</string>
     <string name="menu_map">지도</string>
     <string name="menu_setting">더보기</string>
+
+    <string name="menu_back">&lt;</string>
+    <string name="menu_go">&gt;</string>
+    <string name="setting_title">설정</string>
+    <string name="setting_login">로그인</string>
+    <string name="setting_favorite">즐겨찾기 관리</string>
 </resources>

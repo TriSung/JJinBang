@@ -24,11 +24,12 @@
             android:id="@+id/searchView_main"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#40000000"
+            android:background="@drawable/radius"
             android:layout_marginTop="74.6dp"
             android:layout_marginBottom="85.4dp"
             android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp" />
+            android:layout_marginEnd="21.4dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +46,7 @@
                 android:id="@+id/setSize"
                 android:textColor="@android:color/white"
                 android:text="@string/sizes"
-                android:background="#40000000"
+                android:background="@drawable/radius"
                 android:textSize="14sp"
                 />
 
@@ -56,7 +57,7 @@
                 android:id="@+id/setPrice"
                 android:textColor="@android:color/white"
                 android:text="@string/price"
-                android:background="#40000000"
+                android:background="@drawable/radius"
                 android:textSize="14sp"
                 android:layout_marginStart="10dp"
                 />
@@ -68,7 +69,7 @@
                 android:id="@+id/setMore"
                 android:textColor="@android:color/white"
                 android:text="@string/moreFilter"
-                android:background="#40000000"
+                android:background="@drawable/radius"
                 android:textSize="14sp"
                 android:layout_marginStart="10dp"
                 />
@@ -100,6 +101,7 @@
                 android:layout_height="165dp"
                 android:layout_marginStart="21.4dp"
                 android:layout_marginEnd="10.7dp"
+                android:background="@drawable/radius"
                 android:text="@string/sell">
 
             </Button>
@@ -110,6 +112,7 @@
                 android:layout_height="165dp"
                 android:layout_marginStart="10.7dp"
                 android:layout_marginEnd="21.4dp"
+                android:background="@drawable/radius"
                 android:text="@string/find">
 
             </Button>
@@ -118,7 +121,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21.4dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="5dp"
                 android:text="@string/favorite"
+                android:textStyle="bold"
+                android:textColor="#363636"
                 android:textSize="14sp"/>
 
             <HorizontalScrollView
@@ -166,6 +173,7 @@
             android:layout_marginEnd="33dp"/>
         <Button
             style="?android:borderlessButtonStyle"
+            android:id="@+id/main_setting"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"

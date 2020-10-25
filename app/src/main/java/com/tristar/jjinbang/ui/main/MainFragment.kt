@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.navigation.Navigation
 import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -27,6 +28,12 @@ class MainFragment : Fragment() {
 
         val textView = searchView_main.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
         textView.setTextColor(Color.WHITE)
+
+        main_setting.setOnClickListener {
+            Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                MainFragmentDirections.actionMainFragmentToSettingFragment()
+            )
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

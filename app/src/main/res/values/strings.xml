@@ -16,4 +16,13 @@
     <string name="setting_title">설정</string>
     <string name="setting_login">로그인</string>
     <string name="setting_favorite">즐겨찾기 관리</string>
+
+    <string name="login_title">로그인</string>
+    <string name="login_explanation">방 등록, 이벤트 참여를 위해선 로그인이 필요합니다.</string>
+    <string name="login_id_hint"><![CDATA[ ID]]></string>
+    <string name="login_password_hint"><![CDATA[ PASSWORD]]></string>
+    <string name="login_forgot">비밀번호 찾기</string>
+    <string name="login_sign_up">Sign Up</string>
+    <string name="login_make_account_text">계정이 없으신가요?</string>
+    <string name="login_social">또는 카카오톡을 이용해 계정을 만듭니다.</string>
 </resources>

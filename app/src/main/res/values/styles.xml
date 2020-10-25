@@ -7,9 +7,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="SearchViewTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textColorHint">@android:color/white</item>
-        <item name="android:text">Anywhere</item>
-    </style>
-
 </resources>

@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         container = findViewById(R.id.fragment_container)
-
     }
 
     companion object{

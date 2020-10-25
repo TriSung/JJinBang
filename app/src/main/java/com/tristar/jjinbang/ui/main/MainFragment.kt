@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val textView = searchView_main.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
+        val textView = main_searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
         textView.setTextColor(Color.WHITE)
 
         main_setting.setOnClickListener {

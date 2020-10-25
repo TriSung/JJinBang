@@ -13,11 +13,53 @@
         <action
             android:id="@+id/action_mainFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.tristar.jjinbang.ui.setting.SettingFragment"
         android:label="SettingFragment"
-        tools:layout="@layout/setting_fragment"/>
+        tools:layout="@layout/setting_fragment">
+        <action
+            android:id="@+id/action_settingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.tristar.jjinbang.ui.setting.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassFragment"
+            app:destination="@id/forgotPassFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.tristar.jjinbang.ui.setting.login.ForgotPassFragment"
+        android:label="ForgotPassFragment"
+        tools:layout="@layout/forgot_password_fragment">
+        <action
+            android:id="@+id/action_forgotPassFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.tristar.jjinbang.ui.setting.login.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/sign_up_fragment"/>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.tristar.jjinbang.ui.setting.login.ResetPasswordFragment"
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/reset_password_fragment"/>
 </navigation>

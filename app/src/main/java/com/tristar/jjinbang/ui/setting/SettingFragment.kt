@@ -25,7 +25,7 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setting_go_login.setOnClickListener{setOnGoLoginBtnClickListener()}
+        setting_go_login.setOnClickListener{ setOnGoLoginBtnClickListener() }
         setting_back.setOnClickListener { setOnGoBackBtnClickListener() }
     }
 

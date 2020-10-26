@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ItemWidget">
+    <declare-styleable name="FavoriteWidget">
         <attr name="src" format="reference|string" />
         <attr name="name" format="reference|string" />
         <attr name="price" format="reference|string" />
         <attr name="size" format="reference|string" />
         <attr name="option" format="reference|string" />
-        <attr name="height" format="reference|string" />
+        <attr name="floor_height" format="reference|string" />
     </declare-styleable>
 </resources>

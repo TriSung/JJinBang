@@ -6,12 +6,11 @@
     android:id="@+id/fragment_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment"
-     >
+    tools:context=".ui.main.MainFragment" >
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="300dp"
         android:id="@+id/FrameLayout"
         android:background="@drawable/background_main"
 
@@ -23,10 +22,10 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/main_searchView"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/radius"
-            android:layout_marginTop="74.6dp"
-            android:layout_marginBottom="85.4dp"
+            android:layout_height="37.4dp"
+            android:background="@drawable/button_main"
+            android:layout_marginTop="194.6dp"
+            android:layout_marginBottom="65.4dp"
             android:layout_marginStart="21.4dp"
             android:layout_marginEnd="21.4dp"
             />
@@ -34,7 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
-            android:layout_marginTop="150.6dp"
+            android:layout_marginTop="250.6dp"
             android:layout_marginBottom="32dp"
             android:layout_marginStart="21.4dp"
             android:layout_marginEnd="21.4dp">
@@ -46,7 +45,7 @@
                 android:id="@+id/main_setSize"
                 android:textColor="@android:color/white"
                 android:text="@string/sizes"
-                android:background="@drawable/radius"
+                android:background="@drawable/button_main"
                 android:textSize="14sp"
                 />
 
@@ -57,7 +56,7 @@
                 android:id="@+id/main_setPrice"
                 android:textColor="@android:color/white"
                 android:text="@string/price"
-                android:background="@drawable/radius"
+                android:background="@drawable/button_main"
                 android:textSize="14sp"
                 android:layout_marginStart="10dp"
                 />
@@ -69,7 +68,7 @@
                 android:id="@+id/main_setMore"
                 android:textColor="@android:color/white"
                 android:text="@string/moreFilter"
-                android:background="@drawable/radius"
+                android:background="@drawable/button_main"
                 android:textSize="14sp"
                 android:layout_marginStart="10dp"
                 />
@@ -97,13 +96,14 @@
             android:layout_marginTop="21.4dp">
 
             <Button
+                style="?android:borderlessButtonStyle"
                 android:id="@+id/main_register_room"
                 android:layout_gravity="top"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
                 android:layout_marginStart="21.4dp"
                 android:layout_marginEnd="10.7dp"
-                android:background="@drawable/radius"
+                android:background="@drawable/button_main"
                 android:text="@string/sell">
 
             </Button>
@@ -115,7 +115,7 @@
                 android:layout_height="165dp"
                 android:layout_marginStart="10.7dp"
                 android:layout_marginEnd="21.4dp"
-                android:background="@drawable/radius"
+                android:background="@drawable/button_main"
                 android:text="@string/find">
 
             </Button>
@@ -134,10 +134,37 @@
             <HorizontalScrollView
                 android:layout_columnSpan="2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="21.4dp"
-                >
+                android:id="@+id/main_scrollview_favorite" >
 
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="1"
+                    android:rowCount="2">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="270dp"
+                        android:id="@+id/main_linear_favorite"
+                        android:paddingEnd="13.3dp"
+                        android:layout_column="0"
+                        android:layout_row="0" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="270dp"
+                        android:id="@+id/main_linear_favorite2"
+                        android:layout_column="0"
+                        android:layout_row="1" >
+
+                    </LinearLayout>
+
+                </GridLayout>
 
             </HorizontalScrollView>
 

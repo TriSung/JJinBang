@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.tristar.jjinbang.R
 import com.tristar.jjinbang.ui.setting.SettingFragment
+import kotlinx.android.synthetic.main.forgot_password_fragment.*
 
 class ForgotPassFragment : Fragment() {
     companion object{
@@ -23,5 +25,21 @@ class ForgotPassFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        forgot_sign_up.setOnClickListener { setForgotSignUpBtnClickListener() }
+        forgot_send.setOnClickListener { setForgotSendBtnClickListener() }
+    }
+
+    private fun setForgotSignUpBtnClickListener(){
+        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+            ForgotPassFragmentDirections.actionForgotPassFragmentToSignUpFragment()
+        )
+    }
+
+    private fun setForgotSendBtnClickListener(){
+        // need to check email first
+        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+            ForgotPassFragmentDirections.actionForgotPassFragmentToResetPasswordFragment()
+        )
     }
 }

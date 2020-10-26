@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.tristar.jjinbang.R
-import com.tristar.jjinbang.ui.setting.SettingFragment
+import kotlinx.android.synthetic.main.reset_password_fragment.*
 
 class ResetPasswordFragment : Fragment() {
     companion object{
@@ -23,5 +25,19 @@ class ResetPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            // Handle the back button event
+            // show warning
+            setSubmitBtnClickListener()
+        }
+
+        reset_submit.setOnClickListener { setSubmitBtnClickListener() }
+    }
+
+    private fun setSubmitBtnClickListener(){
+        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+            ResetPasswordFragmentDirections.actionResetPasswordFragmentToLoginFragment()
+        )
     }
 }

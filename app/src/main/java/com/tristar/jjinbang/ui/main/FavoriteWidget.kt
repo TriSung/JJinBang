@@ -104,7 +104,7 @@ class FavoriteWidget : ConstraintLayout {
     }
 
     fun setName(name: String){
-        custom_title.text= name
+        custom_room_name.text= name
     }
 
     fun setPrice(price: String){
@@ -112,7 +112,7 @@ class FavoriteWidget : ConstraintLayout {
     }
 
     fun setSize(size: String){
-        custom_size.text = size
+        custom_room_structure.text = size
     }
 
     fun setOption(option: String){

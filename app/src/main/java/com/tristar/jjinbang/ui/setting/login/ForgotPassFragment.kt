@@ -32,7 +32,7 @@ class ForgotPassFragment : Fragment() {
 
     private fun setForgotSignUpBtnClickListener(){
         Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-            ForgotPassFragmentDirections.actionForgotPassFragmentToSignUpFragment()
+            ForgotPassFragmentDirections.actionForgotPassFragmentToPhoneAuthFragment()
         )
     }
 

@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:layout_marginTop="200dp"
 
-        app:layout_constraintBottom_toBottomOf=""
+        app:layout_constraintBottom_toBottomOf="@id/phone_auth_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -72,7 +72,7 @@
                     <Button
                         android:background="@drawable/button_main"
                         android:layout_width="wrap_content"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:text="@string/sign_up_check"
                         android:textStyle="bold"
                         android:textColor="@color/text"
@@ -105,8 +105,9 @@
 
                     <Button
                         android:background="@drawable/button_main"
+                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:text="@string/sign_up_checkBtn"
                         android:textStyle="bold"
                         android:textColor="@color/text"

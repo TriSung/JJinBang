@@ -8,11 +8,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment" >
 
-    <FrameLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:id="@+id/FrameLayout"
         android:background="@drawable/background_main"
+
+        android:columnCount="3"
+        android:rowCount="5"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,10 +23,15 @@
         app:layout_constraintBottom_toTopOf="@id/scrollview_main">
 
         <TextView
+            android:layout_column="0"
+            android:layout_row="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21.4dp"
             android:layout_marginStart="21.4dp"
+            android:layout_marginTop="21.4dp"
+            android:layout_gravity="start"
+
+            android:fontFamily="@font/jalnan"
             android:text="찐방"
             android:textStyle="bold"
             android:textSize="50sp"
@@ -31,39 +39,57 @@
 
 
         <TextView
+            android:layout_column="0"
+            android:layout_row="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="21.4dp"
-            android:layout_marginTop="100dp"
-            android:text="진짜로 보는 방"
+            android:layout_marginTop="21.4dp"
+            android:layout_gravity="center"
+
+            android:fontFamily="@font/nexon_2_gothic_light"
+            android:text="진짜를 보여주는 방"
             android:textColor="@color/text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="270dp"
-            android:layout_marginTop="21.4dp"
-            android:layout_marginEnd="21.4dp" />
+            android:background="@drawable/button_main"
+            android:layout_width="120dp"
+
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_rowSpan="3"
+
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center"
+            android:src="@drawable/app_logo" />
 
         <androidx.appcompat.widget.SearchView
+            android:layout_marginStart="21.4dp"
+            android:layout_marginEnd="21.4dp"
+            android:layout_marginTop="21.4dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:layout_columnSpan="3"
+            android:layout_gravity="center"
             android:id="@+id/main_searchView"
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
-            android:background="@drawable/button_main"
-            android:layout_marginTop="164.6dp"
-            android:layout_marginBottom="65.4dp"
-            android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp" />
+            android:background="@drawable/button_main" />
 
         <LinearLayout
+            android:layout_marginStart="21.4dp"
+            android:layout_marginEnd="21.4dp"
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
-            android:layout_marginTop="220.6dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp">
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="10dp"
+            android:layout_column="0"
+            android:layout_columnSpan="3"
+            android:layout_row="4"
+            android:layout_gravity="center">
 
             <Button
                 style="?android:borderlessButtonStyle"
@@ -100,7 +126,7 @@
                 android:layout_marginStart="10dp"
                 />
         </LinearLayout>
-    </FrameLayout>
+    </GridLayout>
 
     <ScrollView
         android:id="@+id/scrollview_main"

@@ -16,12 +16,14 @@ class MainActivity : AppCompatActivity() {
 
     private val sharedPrefFile = "app_preferences"
 
-    private val pref = applicationContext.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+    private lateinit var pref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         container = findViewById(R.id.fragment_container)
+
+        pref = getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
 
         // 프로그램이 처음 켜질때 한번만 수행하게 변경
         var attrs: MutableSet<String> = mutableSetOf()

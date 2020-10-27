@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
 
     private fun setLoginSignUpBtnClickListener(){
         Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-            LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
+            LoginFragmentDirections.actionLoginFragmentToPhoneAuthFragment()
         )
     }
 }

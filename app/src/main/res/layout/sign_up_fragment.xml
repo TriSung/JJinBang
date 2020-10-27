@@ -56,6 +56,25 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="13.3dp"
+                android:id="@+id/sign_up_id"
+                android:hint="@string/sign_up_id"
+                android:background="@drawable/login_edit"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/sign_up_id_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/error_id"
+                android:textSize="13sp"
+                android:textColor="@color/color_warning"/>
+
 
 
             <EditText
@@ -69,6 +88,15 @@
                 android:inputType="textPassword"
                 android:padding="10dp"/>
 
+            <TextView
+                android:id="@+id/sign_up_password_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/error_password"
+                android:textColor="@color/color_warning"
+                android:textSize="13sp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -78,7 +106,14 @@
                 android:hint="@string/sign_up_confirm_password"
                 android:background="@drawable/login_edit"
                 android:inputType="textPassword"
-                android:padding="10dp"/>
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/text"
+                android:id="@+id/sign_up_password_confirm" />
 
         </LinearLayout>
     </ScrollView>

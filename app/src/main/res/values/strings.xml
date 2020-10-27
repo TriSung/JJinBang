@@ -19,7 +19,7 @@
 
     <string name="login_title">로그인</string>
     <string name="login_explanation">방 등록, 이벤트 참여를 위해선 로그인이 필요합니다.</string>
-    <string name="login_id_hint">이메일</string>
+    <string name="login_id_hint">아이</string>
     <string name="login_password_hint">비밀번호</string>
     <string name="login_forgot">비밀번호 찾기</string>
     <string name="login_sign_up">회원가입</string>
@@ -32,14 +32,17 @@
     <string name="reset_confirm_password">비밀번호 확인</string>
 
     <string name="forgot_title">비밀번호 찾기</string>
-    <string name="forgot_string">비밀번호를 찾기 위해서는 이메일을 입력해주시길 바랍니다.</string>
-    <string name="forgot_email">Email Address</string>
-    <string name="forgot_send">SEND</string>
+    <string name="forgot_string">비밀번호를 찾기 위해서는 아이디를 입력해주시길 바랍니다.</string>
+    <string name="forgot_id">아이디</string>
+    <string name="forgot_send">전송</string>
 
     <string name="sign_up_title">회원가입</string>
     <string name="sign_up_text">방 등록, 이벤트 참여를 위해선 로그인이 필요합니다.</string>
     <string name="sign_up_name">이름</string>
-    <string name="sign_up_email">이메일</string>
+    <string name="sign_up_phone_number">핸드폰 번호</string>
+    <string name="sign_up_check">인증하기</string>
+    <string name="sign_up_checkNumber">인증번호 입력</string>
+    <string name="sign_up_checkBtn">인증하기</string>
     <string name="sign_up_password">비밀번호</string>
     <string name="sign_up_confirm_password">비밀번호 확인</string>
     <string name="sign_up_login">로그인</string>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ebecef"
+    android:background="@color/background_sub"
     android:id="@+id/fragment_setting">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/setting_horizon1"
@@ -30,14 +30,15 @@
 
             android:textStyle="bold"
             android:text="@string/menu_back"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="@color/text"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/setting_title"
             android:textAlignment="textStart"
-            android:textColor="#363636"
+            android:textColor="@color/text"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -72,7 +73,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/setting_login"
-                android:textColor="#363636"
+                android:textColor="@color/text"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_weight="1"/>
@@ -86,7 +87,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
                 android:text="@string/menu_go"
-                android:textColor="#363636"
+                android:textColor="@color/text"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -113,7 +114,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/setting_favorite"
-                android:textColor="#363636"
+                android:textColor="@color/text"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_weight="1"/>
@@ -125,7 +126,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
                 android:text="@string/menu_go"
-                android:textColor="#363636"
+                android:textColor="@color/text"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

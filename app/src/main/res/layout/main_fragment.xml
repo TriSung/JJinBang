@@ -10,7 +10,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="270dp"
         android:id="@+id/FrameLayout"
         android:background="@drawable/background_main"
 
@@ -19,21 +19,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/scrollview_main">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21.4dp"
+            android:layout_marginStart="21.4dp"
+            android:text="찐방"
+            android:textStyle="bold"
+            android:textSize="50sp"
+            android:textColor="@color/text" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21.4dp"
+            android:layout_marginTop="100dp"
+            android:text="진짜로 보는 방"
+            android:textColor="@color/text"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="21.4dp"
+            android:layout_marginEnd="21.4dp" />
+
         <androidx.appcompat.widget.SearchView
             android:id="@+id/main_searchView"
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
             android:background="@drawable/button_main"
-            android:layout_marginTop="194.6dp"
+            android:layout_marginTop="164.6dp"
             android:layout_marginBottom="65.4dp"
             android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp"
-            />
+            android:layout_marginEnd="21.4dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
-            android:layout_marginTop="250.6dp"
+            android:layout_marginTop="220.6dp"
             android:layout_marginBottom="32dp"
             android:layout_marginStart="21.4dp"
             android:layout_marginEnd="21.4dp">
@@ -43,7 +70,7 @@
                 android:layout_width="106.6dp"
                 android:layout_height="37.4dp"
                 android:id="@+id/main_setSize"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text"
                 android:text="@string/sizes"
                 android:background="@drawable/button_main"
                 android:textSize="14sp"
@@ -54,7 +81,7 @@
                 android:layout_width="106.6dp"
                 android:layout_height="37.4dp"
                 android:id="@+id/main_setPrice"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text"
                 android:text="@string/price"
                 android:background="@drawable/button_main"
                 android:textSize="14sp"
@@ -66,7 +93,7 @@
                 android:layout_width="106.6dp"
                 android:layout_height="37.4dp"
                 android:id="@+id/main_setMore"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text"
                 android:text="@string/moreFilter"
                 android:background="@drawable/button_main"
                 android:textSize="14sp"
@@ -84,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FrameLayout"
-        android:background="#ebecef">
+        android:background="@color/background_sub">
 
         <GridLayout
             android:id="@+id/grid_in_scroll"
@@ -104,7 +131,8 @@
                 android:layout_marginStart="21.4dp"
                 android:layout_marginEnd="10.7dp"
                 android:background="@drawable/button_main"
-                android:text="@string/sell">
+                android:text="@string/sell"
+                android:textColor="@color/text">
 
             </Button>
 
@@ -116,7 +144,8 @@
                 android:layout_marginStart="10.7dp"
                 android:layout_marginEnd="21.4dp"
                 android:background="@drawable/button_main"
-                android:text="@string/find">
+                android:text="@string/find"
+                android:textColor="@color/text">
 
             </Button>
 
@@ -128,7 +157,7 @@
                 android:layout_marginBottom="5dp"
                 android:text="@string/favorite"
                 android:textStyle="bold"
-                android:textColor="#363636"
+                android:textColor="@color/text"
                 android:textSize="14sp"/>
 
             <HorizontalScrollView
@@ -173,12 +202,13 @@
 
     </ScrollView>
 
+    <!--android:background="#26000000" -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/menuLinear"
         android:orientation="horizontal"
-        android:background="#26000000"
+        android:background="@drawable/background_main"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

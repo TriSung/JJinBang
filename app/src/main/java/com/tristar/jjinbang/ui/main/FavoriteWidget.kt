@@ -6,12 +6,10 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.tristar.jjinbang.FavoriteRoomAttribute
 import com.tristar.jjinbang.R
-import kotlinx.android.synthetic.main.favorite_widget.view.*
-import java.net.URI
+import kotlinx.android.synthetic.main.custom_favorite_widget.view.*
 
 
 /**
@@ -45,7 +43,7 @@ class FavoriteWidget : ConstraintLayout {
     }
 
     private fun initLayout(){
-        LayoutInflater.from(context).inflate(R.layout.favorite_widget, this, true)
+        LayoutInflater.from(context).inflate(R.layout.custom_favorite_widget, this, true)
     }
 
     private fun getAttrs(attrs: AttributeSet?){

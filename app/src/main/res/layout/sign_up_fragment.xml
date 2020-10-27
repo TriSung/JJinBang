@@ -8,7 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="100dp"
 
@@ -56,73 +56,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"/>
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="113.3dp"
-                android:layout_marginTop="13.3dp"
-                android:layout_marginBottom="10dp"
-                android:columnCount="1"
-                android:rowCount="2">
 
-                <LinearLayout
-                    android:layout_column="0"
-                    android:layout_row="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:id="@+id/sign_up_phone_number"
-                        android:hint="@string/sign_up_phone_number"
-                        android:background="@drawable/login_edit"
-                        android:inputType="phone"
-                        android:padding="10dp"
-                        android:layout_weight="1"/>
-
-                    <Button
-                        android:background="@drawable/button_main"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:text="@string/sign_up_check"
-                        android:textStyle="bold"
-                        android:textColor="@color/text"
-                        />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_column="0"
-                    android:layout_row="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="13.3dp" >
-
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:id="@+id/sign_up_check_number"
-                        android:hint="@string/sign_up_checkNumber"
-                        android:background="@drawable/login_edit"
-                        android:inputType="phone"
-                        android:padding="10dp"
-                        android:layout_gravity="end"/>
-
-                    <Button
-                        android:background="@drawable/button_main"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:text="@string/sign_up_checkBtn"
-                        android:textStyle="bold"
-                        android:textColor="@color/text" />
-
-                </LinearLayout>
-
-            </GridLayout>
 
             <EditText
                 android:layout_width="match_parent"
@@ -168,7 +102,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_make_account_text"
+        android:text="@string/login_login_text"
         android:textStyle="bold"
         android:textSize="15sp"
         android:textColor="@color/text"

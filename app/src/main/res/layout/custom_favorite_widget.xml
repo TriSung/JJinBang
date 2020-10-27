@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:id="@+id/custom_title"
+            android:id="@+id/custom_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home-Sando"
@@ -102,7 +102,7 @@
             android:textSize="15sp"
             android:textColor="@color/text"
             android:textStyle="bold"
-            android:id="@+id/custom_size"/>
+            android:id="@+id/custom_room_structure"/>
     </LinearLayout>
 
     <LinearLayout

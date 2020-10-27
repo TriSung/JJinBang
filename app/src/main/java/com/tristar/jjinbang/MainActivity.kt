@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun readPreference(){
         if(mainData.isFirstCreate){
-            pref.getStringSet("")
+
         }
         mainData.isFirstCreate = false
     }

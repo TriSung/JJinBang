@@ -13,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.Navigation
 import com.tristar.jjinbang.Data
 import com.tristar.jjinbang.FavoriteRoomAttribute
+import com.tristar.jjinbang.MainActivity.Companion.mainData
 import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -46,7 +47,7 @@ class MainFragment : Fragment() {
          * 2. set favorite list
          */
         var ct: Int = 0
-        for(roomAttr: FavoriteRoomAttribute in Data.favoriteRoomList){
+        for(roomAttr: FavoriteRoomAttribute in mainData.favoriteRoomList){
             if(ct % 2 == 0){
                 val newFavoriteWidget = FavoriteWidget(requireContext())
                 newFavoriteWidget.setAttributes(roomAttr)

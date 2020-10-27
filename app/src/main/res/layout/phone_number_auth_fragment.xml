@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_sub">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp"
+
+        app:layout_constraintBottom_toBottomOf=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/phone_auth_scroll" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up_title"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@color/text"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="13.3dp"
+                android:text="@string/sign_up_phone_text"
+                android:textSize="15sp"
+                android:textColor="@color/text"
+                android:textAlignment="center"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="113.3dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="10dp"
+                android:columnCount="1"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/sign_up_phone_number"
+                        android:hint="@string/sign_up_phone_number"
+                        android:background="@drawable/login_edit"
+                        android:inputType="phone"
+                        android:padding="10dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:background="@drawable/button_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="@string/sign_up_check"
+                        android:textStyle="bold"
+                        android:textColor="@color/text"
+                        android:clickable="false"
+                        android:id="@+id/phone_auth_first"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="13.3dp" >
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:id="@+id/sign_up_check_number"
+                        android:hint="@string/sign_up_checkNumber"
+                        android:background="@drawable/login_edit"
+                        android:inputType="phone"
+                        android:padding="10dp"
+                        android:layout_gravity="end"/>
+
+                    <Button
+                        android:background="@drawable/button_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="@string/sign_up_checkBtn"
+                        android:textStyle="bold"
+                        android:textColor="@color/text"
+                        android:clickable="false"
+                        android:id="@+id/phone_auth_second"/>
+
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/phone_auth_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_login"
+        android:text="@string/phone_next"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+
+        android:clickable="false"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_scroll"
+        app:layout_constraintBottom_toTopOf="@id/phone_auth_login_text"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_login_text"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/text"
+        android:id="@+id/phone_auth_login_text"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_next"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        style="?android:borderlessButtonStyle"
+        android:id="@+id/phone_auth_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_login"
+        android:textColor="#f54e5e"
+        android:textStyle="bold"
+        android:textSize="13sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_next"
+        app:layout_constraintStart_toEndOf="@id/phone_auth_login_text"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

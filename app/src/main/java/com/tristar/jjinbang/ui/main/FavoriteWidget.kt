@@ -83,10 +83,10 @@ class FavoriteWidget : ConstraintLayout {
     }
 
     public fun setAttributes(attrs: FavoriteRoomAttribute){
-        setSrc(attrs.src)
-        setName(attrs.name)
+        setSrc(attrs.imageSrc)
+        setName(attrs.roomName)
         setPrice(attrs.price)
-        setSize(attrs.size)
+        setSize(attrs.roomStructure)
         setOption(attrs.option)
         setFloorHeight(attrs.floorHeight)
     }

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.tristar.jjinbang.Data
 import com.tristar.jjinbang.R
 import com.tristar.jjinbang.ui.setting.SettingFragment
 import kotlinx.android.synthetic.main.login_fragment.*
@@ -32,36 +33,25 @@ class LoginFragment : Fragment() {
         return inflater.inflate(R.layout.login_fragment, container, false)
     }
 
+    private lateinit var inputId: String
+    private lateinit var inputPassword: String
+    private var isAutoLogin: Boolean = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         login_forgot.setOnClickListener { setLoginForgotBtnClickListener() }
         login_sign_up.setOnClickListener { setLoginSignUpBtnClickListener() }
+        login_login.setOnClickListener { setLoginLoginBtnClickListener() }
+        isAutoLogin = login_auto.isChecked
+    }
 
-        login_id.addTextChangedListener(object: TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
-                // 입력이 끝난 경우 작동
-            }
+    private fun setLoginLoginBtnClickListener(){
+        inputId = login_id.text.toString()
+        inputPassword = login_password.text.toString()
 
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
+        // check id-password set
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // 타이핑중인 텍스트에 변화가 있으면 작동
-            }
-        })
-
-        login_password.addTextChangedListener(object: TextWatcher{
-            override fun afterTextChanged(p0: Editable?) {
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-        })
     }
 
     private fun setLoginForgotBtnClickListener(){

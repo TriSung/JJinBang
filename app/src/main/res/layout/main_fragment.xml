@@ -77,6 +77,7 @@
             android:id="@+id/main_searchView"
             android:layout_width="match_parent"
             android:layout_height="37.4dp"
+            android:textColor="@color/text"
             android:background="@drawable/button_main" />
 
         <LinearLayout

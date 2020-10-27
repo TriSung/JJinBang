@@ -1,6 +1,8 @@
 package com.tristar.jjinbang.ui.setting.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,11 +25,14 @@ class ForgotPassFragment : Fragment() {
         return inflater.inflate(R.layout.forgot_password_fragment, container, false)
     }
 
+    private lateinit var id: String
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         forgot_sign_up.setOnClickListener { setForgotSignUpBtnClickListener() }
         forgot_send.setOnClickListener { setForgotSendBtnClickListener() }
+
+
     }
 
     private fun setForgotSignUpBtnClickListener(){
@@ -37,7 +42,9 @@ class ForgotPassFragment : Fragment() {
     }
 
     private fun setForgotSendBtnClickListener(){
-        // need to check email first
+        // need to check id first
+        id = forgot_id.text.toString()
+
         Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
             ForgotPassFragmentDirections.actionForgotPassFragmentToResetPasswordFragment()
         )

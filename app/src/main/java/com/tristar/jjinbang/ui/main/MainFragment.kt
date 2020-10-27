@@ -47,7 +47,7 @@ class MainFragment : Fragment() {
          * 2. set favorite list
          */
         var ct: Int = 0
-        for(roomAttr: FavoriteRoomAttribute in mainData.favoriteRoomList){
+        for(roomAttr: FavoriteRoomAttribute in Data.favoriteRoomList){
             if(ct % 2 == 0){
                 val newFavoriteWidget = FavoriteWidget(requireContext())
                 newFavoriteWidget.setAttributes(roomAttr)

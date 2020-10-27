@@ -59,6 +59,7 @@
         android:name="com.tristar.jjinbang.ui.setting.login.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/sign_up_fragment">
+
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment"

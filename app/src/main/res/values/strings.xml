@@ -51,11 +51,16 @@
     <string name="sign_up_confirm_password">비밀번호 확인</string>
     <string name="sign_up_login">로그인</string>
     <string name="sign_up_id">아이디</string>
+    <string name="sign_up_duplication_check">중복 확인</string>
 
     <string name="error_password">비밀번호는 8~15글자 사이어야 하며, 알파벳, 숫자, 특수문자가 최소 1개씩은 포함되어야 합니다</string>
     <string name="error_id">아이디는 5~15글자 사이의 알파벳과 숫자로 이루어져야 합니다. 아이디의 첫글자는 무조건 알파벳으로 시작해야 합니다</string>
     <string name="usable_password">사용할 수 있는 패스워드입니다</string>
     <string name="usable_id">사용할 수 있는 아이디입니다</string>
+    <string name="duplication_check">중복검사가 필요합니다</string>
+    <string name="duplicated_id">중복된 아이디가 있습니다. 다른 아이디를 입력해 주시기 바랍니다</string>
     <string name="warning_password_confirm">패스워드가 일치하지 않습니다</string>
     <string name="correct_password_confirm">패스워드가 일치합니다</string>
+
+    <string name="phone_num_warning">정확한 핸드폰 번호를 입력해주세요</string>
 </resources>

@@ -6,29 +6,27 @@ class Data{
     companion object{
         const val favoritePrefHeader : String = "FAVORITE"
         const val registerPrefHeader : String = "REGISTER"
+        private val passReg = Regex("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&]).{8,15}.\$")
+        private val idReg = Regex("^[a-zA-Z].[a-zA-Z0-9]{5,15}$")
+        private val phoneNumberReg = Regex("^01[016789][0-9]{4}[0-9]{4}$")
+        fun passwordCheck(password: String) : Boolean = passReg.matches(password)
+        fun idCheck(id: String) : Boolean = idReg.matches(id)
+        fun phoneNumberCheck(phoneNum : String) : Boolean = phoneNumberReg.matches(phoneNum)
 
-        val passReg = Regex("^(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z!@#\$%^&*])(?=.*[0-9!@#\$%^&*]).{8,15}\$")
-        val idReg = Regex("^[a-zA-Z].[a-zA-Z0-9]{5,15}$")
-        val phoneNumberReg = Regex("^01[016789][0-9]{4}[0-9]{4}$")
+        lateinit var userPhoneNum: String
+        lateinit var userName: String
+        lateinit var userId: String
+        lateinit var userPass: String
 
-        fun passwordCheck(password: String) : Boolean{
-            return passReg.matches(password)
-        }
+        var isLogin: Boolean = false
 
-        fun idCheck(id: String) : Boolean{
-            return idReg.matches(id)
-        }
+        var favoriteRoomList: MutableList<FavoriteRoomAttribute> = mutableListOf()
+        var registeredRoomList: MutableList<RoomAttributes> = mutableListOf()
 
-        fun phoneNumberCheck(phoneNum : String) : Boolean{
-            return phoneNumberReg.matches(phoneNum)
-        }
+        var isFirstCreate : Boolean = true
+        var autoLogin: Boolean = false
+
+        var authString: String? = "1234"
     }
-    var favoriteRoomList: MutableList<FavoriteRoomAttribute> = mutableListOf()
-    var registeredRoomList: MutableList<RoomAttributes> = mutableListOf()
 
-    var isFirstCreate : Boolean = true
-    var autoLogin: Boolean = false
-
-    lateinit var userId: String
-    lateinit var userPass: String
 }

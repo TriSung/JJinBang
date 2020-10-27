@@ -48,7 +48,7 @@ class PhoneAuthFragment : Fragment() {
             override fun afterTextChanged(p0: Editable?) { }
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(Data.phoneNumberCheck(p0.toString()) and (Data.userPhoneNum == p0.toString())){
+                if(Data.phoneNumberCheck(p0.toString()) and (Data.hardwarePhoneNum == p0.toString())){
                     phone_auth_text.text = ""
                     correctPhoneNum = true
                 }
@@ -83,13 +83,7 @@ class PhoneAuthFragment : Fragment() {
     }
 
     private fun setSecondBtnClickListener(){
-        if(Data.authString != null){
-            if(Data.authString == authString){
-                phone_auth_next.visibility = View.VISIBLE
-                phone_auth_second.visibility = View.INVISIBLE
-                phone_auth_check_number.isEnabled = false
-            }
-        }
+
     }
 
     private fun setNextBtnClickListener(){

@@ -64,7 +64,7 @@
             android:layout_columnSpan="2"
             android:layout_gravity="center"
             android:background="#00FFFFFF"
-            android:src="@drawable/app_logo_transparent" />
+            android:src="@drawable/app_logo_color" />
 
         <androidx.appcompat.widget.SearchView
             android:layout_marginStart="21.4dp"
@@ -199,6 +199,7 @@
                     android:layout_height="wrap_content"
                     android:columnCount="1"
                     android:rowCount="2">
+
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
@@ -252,11 +253,11 @@
             android:layout_marginEnd="33dp"/>
         <Button
             style="?android:borderlessButtonStyle"
-            android:id="@+id/main_map"
+            android:id="@+id/main_search"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:text="@string/menu_map"
+            android:text="@string/menu_search"
             android:layout_gravity="center"
             android:layout_marginStart="33dp"
             android:layout_marginEnd="33dp"/>

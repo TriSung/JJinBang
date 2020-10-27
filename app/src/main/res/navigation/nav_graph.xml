@@ -39,6 +39,11 @@
         <action
             android:id="@+id/action_loginFragment_to_phoneAuthFragment"
             app:destination="@id/phoneAuthFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

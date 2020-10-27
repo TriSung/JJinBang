@@ -8,7 +8,7 @@
     <string name="sell">방 등록</string>
     <string name="find">방 찾기</string>
     <string name="menu_home">홈</string>
-    <string name="menu_map">지도</string>
+    <string name="menu_search">찾아보기</string>
     <string name="menu_setting">더보기</string>
 
     <string name="menu_back">&lt;</string>
@@ -43,7 +43,7 @@
     <string name="sign_up_text">방 등록, 이벤트 참여를 위해선 로그인이 필요합니다.</string>
     <string name="sign_up_name">이름</string>
     <string name="sign_up_phone_number">핸드폰 번호</string>
-    <string name="sign_up_phone_text">회원가입을 위한 본인인증을 1회 수행합니다. 문자로 받은 인증번호를 입력해주시기 바랍니다.</string>
+    <string name="sign_up_phone_text">회원가입을 위한 본인인증을 1회 수행합니다.</string>
     <string name="sign_up_check">인증하기</string>
     <string name="sign_up_checkNumber">인증번호 입력</string>
     <string name="sign_up_checkBtn">인증하기</string>
@@ -61,6 +61,8 @@
     <string name="duplicated_id">중복된 아이디가 있습니다. 다른 아이디를 입력해 주시기 바랍니다</string>
     <string name="warning_password_confirm">패스워드가 일치하지 않습니다</string>
     <string name="correct_password_confirm">패스워드가 일치합니다</string>
+
+    <string name="login_wrong_info">존재하지 않는 아이디거나 비밀번호가 틀렸습니다</string>
 
     <string name="phone_num_warning">정확한 핸드폰 번호를 입력해주세요</string>
 </resources>

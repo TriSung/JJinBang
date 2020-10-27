@@ -9,11 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.Navigation
 import com.tristar.jjinbang.Data
 import com.tristar.jjinbang.FavoriteRoomAttribute
-import com.tristar.jjinbang.MainActivity.Companion.mainData
 import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -40,6 +40,14 @@ class MainFragment : Fragment() {
             Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
                 MainFragmentDirections.actionMainFragmentToSettingFragment()
             )
+        }
+        
+        main_register_room.setOnClickListener { 
+            if(Data.isLogin){
+                Toast.makeText(context, "준비중입니다.", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context, "로그인이 필요한 서비스입니다.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         /**

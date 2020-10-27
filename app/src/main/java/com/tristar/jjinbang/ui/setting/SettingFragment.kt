@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.tristar.jjinbang.Data
+import com.tristar.jjinbang.MainActivity
 import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.setting_fragment.*
 
@@ -25,23 +29,38 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if(Data.isLogin){
+            setting_logout.visibility = View.VISIBLE
+        }
+        else{
+            setting_logout.visibility = View.INVISIBLE
+        }
+
         setting_go_login.setOnClickListener{ setOnGoLoginBtnClickListener() }
         setting_back.setOnClickListener { setOnGoBackBtnClickListener() }
+        setting_logout.setOnClickListener { setOnLogoutBtnClickListener() }
     }
 
     private fun setOnGoLoginBtnClickListener(){
-        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-            SettingFragmentDirections.actionSettingFragmentToLoginFragment()
-        )
-    }
-
-    private fun setOnGoBackBtnClickListener(){
-        if(! Navigation.findNavController(requireActivity(), R.id.fragment_container).popBackStack()){
-            finish()
+        if(!Data.isLogin){
+            Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                SettingFragmentDirections.actionSettingFragmentToLoginFragment()
+            )
         }
     }
 
-    private fun finish(){
+    private fun setOnGoBackBtnClickListener(){
+        Navigation.findNavController(requireActivity(), R.id.fragment_container).popBackStack()
+    }
 
+    private fun setOnLogoutBtnClickListener(){
+        Toast.makeText(context,"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+        Data.isLogin = false
+        Data.userId = null
+        Data.userName = null
+        Data.userPassword = null
+        Data.autoLogin = false
+        MainActivity.saveMainPref()
+        setting_logout.visibility = View.INVISIBLE
     }
 }

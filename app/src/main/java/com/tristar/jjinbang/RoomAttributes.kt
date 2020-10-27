@@ -1,7 +1,5 @@
 package com.tristar.jjinbang
 
-import java.util.*
-
 open class RoomAttributes {
     lateinit var imageSrc: Any
     lateinit var roomName: String
@@ -19,5 +17,4 @@ open class RoomAttributes {
     var size: Float = 0.0f
     var parking: Boolean = false
     var elevator: Boolean = false
-
 }

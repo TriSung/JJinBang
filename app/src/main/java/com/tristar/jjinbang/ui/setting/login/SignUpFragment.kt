@@ -18,6 +18,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.tristar.jjinbang.Data
 import com.tristar.jjinbang.R
+import com.tristar.jjinbang.ui.Users
 import com.tristar.jjinbang.ui.setting.SettingFragment
 import kotlinx.android.synthetic.main.sign_up_fragment.*
 
@@ -92,6 +93,10 @@ class SignUpFragment : Fragment(){
                     sign_up_id_text.setText(R.string.duplication_check)
                     sign_up_id_text.setTextColor(resources.getColor(R.color.color_warning, null))
                 }
+                else{
+                    sign_up_check_duplication.isClickable = false
+                    sign_up_id_text.setText(R.string.error_id)
+                }
             }
         })
 
@@ -152,8 +157,9 @@ class SignUpFragment : Fragment(){
                 }
                 else{
                     Data.userId = userId!!
-                    Data.userPass = userPassword!!
+                    Data.userPassword = userPassword!!
                     Data.userName = userName!!
+                    Data.sendNewUserInfo()
 
                     Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
                         SignUpFragmentDirections.actionSignUpFragmentToLoginFragment()
@@ -164,6 +170,14 @@ class SignUpFragment : Fragment(){
     }
 
     private fun setSignUpDuplicateCheckBtnListener(){
+        /**
+         * test code
+         */
+        isDuplicated = false
+        for(user in Users.userList){
+            if(userId == user.userId)
+                isDuplicated = true
+        }
         // 디비에 있는 id와 비교, 중복된 값이 있으면 안됨
         if(!isDuplicated){
             sign_up_id_text.setText(R.string.usable_id)

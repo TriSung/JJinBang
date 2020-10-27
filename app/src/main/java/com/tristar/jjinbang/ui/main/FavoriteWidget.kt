@@ -82,7 +82,7 @@ class FavoriteWidget : ConstraintLayout {
             setFloorHeight(floorHeight)
     }
 
-    public fun setAttributes(attrs: FavoriteRoomAttribute){
+    fun setAttributes(attrs: FavoriteRoomAttribute){
         setSrc(attrs.imageSrc)
         setName(attrs.roomName)
         setPrice(attrs.price)
@@ -92,10 +92,7 @@ class FavoriteWidget : ConstraintLayout {
     }
 
     fun setSrc(src: Any) {
-        if(src is Drawable){
-            custom_imageView.setImageDrawable(src)
-        }
-        else if(src is String){
+        if(src is String){
             val uri: Uri = Uri.parse(src)
             custom_imageView.setImageURI(uri)
         }

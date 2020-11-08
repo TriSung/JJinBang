@@ -31,10 +31,6 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /** Set searchView's text color white **/
-        val textView = main_searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
-        textView.setTextColor(Color.WHITE)
-
         /** add button onClickListener **/
         main_setting.setOnClickListener {
             Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
@@ -49,6 +45,13 @@ class MainFragment : Fragment() {
                 Toast.makeText(context, "로그인이 필요한 서비스입니다.", Toast.LENGTH_SHORT).show()
             }
         }
+
+        main_search.setOnClickListener {
+            Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                MainFragmentDirections.actionMainFragmentToSearchFragment()
+            )
+        }
+
 
         /**
          * 1. read favorite list

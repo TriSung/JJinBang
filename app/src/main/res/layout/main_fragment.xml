@@ -10,7 +10,7 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="160dp"
         android:id="@+id/FrameLayout"
         android:background="@drawable/background_main"
 
@@ -66,67 +66,7 @@
             android:background="#00FFFFFF"
             android:src="@drawable/app_logo_color" />
 
-        <androidx.appcompat.widget.SearchView
-            android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp"
-            android:layout_marginTop="21.4dp"
-            android:layout_column="0"
-            android:layout_row="3"
-            android:layout_columnSpan="3"
-            android:layout_gravity="center"
-            android:id="@+id/main_searchView"
-            android:layout_width="match_parent"
-            android:layout_height="37.4dp"
-            android:textColor="@color/text"
-            android:background="@drawable/button_main" />
 
-        <LinearLayout
-            android:layout_marginStart="21.4dp"
-            android:layout_marginEnd="21.4dp"
-            android:layout_width="match_parent"
-            android:layout_height="37.4dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="10dp"
-            android:layout_column="0"
-            android:layout_columnSpan="3"
-            android:layout_row="4"
-            android:layout_gravity="center">
-
-            <Button
-                style="?android:borderlessButtonStyle"
-                android:layout_width="106.6dp"
-                android:layout_height="37.4dp"
-                android:id="@+id/main_setSize"
-                android:textColor="@color/text"
-                android:text="@string/sizes"
-                android:background="@drawable/button_main"
-                android:textSize="14sp"
-                />
-
-            <Button
-                style="?android:borderlessButtonStyle"
-                android:layout_width="106.6dp"
-                android:layout_height="37.4dp"
-                android:id="@+id/main_setPrice"
-                android:textColor="@color/text"
-                android:text="@string/price"
-                android:background="@drawable/button_main"
-                android:textSize="14sp"
-                android:layout_marginStart="10dp"
-                />
-
-            <Button
-                style="?android:borderlessButtonStyle"
-                android:layout_width="106.6dp"
-                android:layout_height="37.4dp"
-                android:id="@+id/main_setMore"
-                android:textColor="@color/text"
-                android:text="@string/moreFilter"
-                android:background="@drawable/button_main"
-                android:textSize="14sp"
-                android:layout_marginStart="10dp"
-                />
-        </LinearLayout>
     </GridLayout>
 
     <ScrollView

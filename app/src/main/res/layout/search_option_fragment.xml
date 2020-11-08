@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_login">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scrollView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/option_back"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:textStyle="bold"
+            android:text="@string/menu_back"
+            android:textSize="20sp"
+            android:textColor="@color/text"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:borderlessButtonStyle"
+            android:id="@+id/option_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="초기화"
+            android:textAlignment="textStart"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_reset"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/constraint_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_room_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="방 크기"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text"
+                android:layout_marginStart="13.3dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="13.3dp"
+                android:layout_marginEnd="13.3dp"
+
+                android:gravity="start" />
+
+            <GridLayout
+                android:background="@drawable/border_grid"
+                android:id="@+id/grid_room_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3.3dp"
+                android:paddingStart="10dp"
+                android:layout_marginEnd="3.3dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="13.3dp"
+                android:paddingBottom="13.3dp"
+
+                android:columnCount="4"
+                android:rowCount="4" >
+
+                <CheckBox
+                    android:id="@+id/checkbox_room1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="원룸"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_columnSpan="2"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_room1_split"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="분리형 원룸"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_columnSpan="2"
+                    android:layout_row="0"/>
+
+
+                <CheckBox
+                    android:id="@+id/checkbox_room1.5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="1.5룸"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_columnSpan="2"/>
+
+
+                <CheckBox
+                    android:id="@+id/checkbox_room2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="투룸 이상"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="방 크기"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:layout_column="0"
+                    android:layout_row="2"/>
+
+                <LinearLayout
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_columnWeight="2">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="m2" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13.3dp"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="~"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    android:layout_row="2"
+                    />
+
+                <LinearLayout
+                    android:layout_row="2"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9999"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="m2" />
+
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_size_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="0"/>
+
+                <SeekBar
+                    android:id="@+id/seekBar_size_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_row="3"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="9999"/>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/textView_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가격"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text"
+
+                android:layout_marginStart="13.3dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="13.3dp"
+                android:layout_marginEnd="13.3dp" />
+
+            <GridLayout
+                android:background="@drawable/border_grid"
+                android:id="@+id/grid_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3.3dp"
+                android:paddingStart="10dp"
+                android:layout_marginEnd="3.3dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="13.3dp"
+                android:paddingBottom="13.3dp"
+
+                android:columnCount="4"
+                android:rowCount="4" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="보증금"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:layout_column="0"
+                    android:layout_row="0"/>
+
+                <LinearLayout
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1.2">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13.3dp"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="~"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    android:layout_row="0"
+                    />
+
+                <LinearLayout
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9999"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_deposit_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13.3dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="0"/>
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_deposit_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13.3dp"
+                    android:layout_column="3"
+                    android:layout_row="1"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="9999" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="월세"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:layout_column="0"
+                    android:layout_row="2"/>
+
+                <LinearLayout
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1.2">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13.3dp"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="~"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    android:layout_row="2"
+                    />
+
+                <LinearLayout
+                    android:layout_row="2"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9999"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_month_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="0" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_month_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_row="3"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="9999" />
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/textView_floor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="13.3dp"
+                android:layout_marginBottom="13.3dp"
+                android:text="층고"
+
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/grid_floor"
+                android:background="@drawable/border_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3.3dp"
+                android:paddingStart="10dp"
+                android:layout_marginEnd="3.3dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="13.3dp"
+                android:paddingBottom="13.3dp"
+
+                android:columnCount="4"
+                android:rowCount="4" >
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor_under"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="반지하/지하"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="1층"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="2층"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="3층"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="3"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="4층"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_columnSpan="2"
+                    android:layout_row="1"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_floor_over"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="5층 이상"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_columnSpan="2"
+                    android:layout_row="1"/>
+
+            </GridLayout>
+
+            <CheckBox
+                android:id="@+id/checkbox_option"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:button="@null"
+                android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                android:text="풀옵션"
+                android:textSize="17sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+
+                android:layout_marginStart="3.3dp"
+                android:layout_marginTop="13.3dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/checkbox_parking"
+                app:layout_constraintTop_toBottomOf="@id/grid_floor"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_container"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_parking"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:button="@null"
+                android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                android:text="주차 가능"
+                android:textSize="17sp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+
+                android:layout_marginStart="3.3dp"
+                android:layout_marginTop="13.3dp"
+
+                app:layout_constraintStart_toEndOf="@id/checkbox_option"
+                app:layout_constraintTop_toBottomOf="@id/grid_floor"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_container"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

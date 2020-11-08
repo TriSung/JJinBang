@@ -12,6 +12,11 @@
         android:roundIcon="@drawable/app_logo_color"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAyLiXbAx0r8UmKLFJ7rAUJ4KvCX_ay0u4" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

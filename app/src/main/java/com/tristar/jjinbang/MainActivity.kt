@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * test code
          */
+
         Users.userList.add(TempUserData("허정우", "hjw123", "hjw12345!"))
         Users.userList.add(TempUserData("박상우", "psw123", "caucse12!"))
     }

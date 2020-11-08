@@ -43,6 +43,10 @@ class Data{
              */
             Users.userList.add(TempUserData(userName!!, userId!!, userPassword!!))
         }
+        val options = Options()
     }
+}
+
+class Options{
 
 }

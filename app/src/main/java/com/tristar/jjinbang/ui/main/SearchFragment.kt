@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,7 +73,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
 
         setOptions.setOnClickListener {
             Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-                MainFragmentDirections.actionMainFragmentToSearchOptionFragment()
+                MainFragmentDirections.actionMainFragmentToSearchFragment()
             )
         }
         mapView.onCreate(savedInstanceState)
@@ -101,6 +102,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
                 val locality = addrName.locality // 시 --> 특별시, 광역시 는 해당 x
                 val subLocality = addrName.subLocality // 구 --> 없는 시, 군은 null
                 val thoroughfare = addrName.thoroughfare // 동
+                Log.d("TEST", "Location: $adminArea, $locality, $subLocality, $thoroughfare")
             }
 
         }

@@ -33,19 +33,19 @@ class FavoriteRoomAttribute() : RoomAttributes() {
     constructor(srcType: String, src: String, name: String, price: String, roomStructure: String, option: String, floorHeight: String) : this(){
         when{
             srcType == imageSrcHeaderDrawable->{
-                this.imageSrc = drawableString + src
+                this.thumbnail = drawableString + src
             }
             srcType == imageSrcHeaderURI->{
-                this.imageSrc = src
+                this.thumbnail = src
             }
             srcType == imageSrcHeaderString->{
-                this.imageSrc = src
+                this.thumbnail = src
             }
         }
-        this.roomName = name
+        this.roomTitle = name
         this.price = price
         this.roomStructure = roomStructure
-        this.option = option
+        this.options = option
         this.floorHeight = floorHeight
     }
 
@@ -56,19 +56,19 @@ class FavoriteRoomAttribute() : RoomAttributes() {
     private fun readPrefInfo(pref: SharedPreferences){
         when {
             pref.getString(imageSrcHeaderString, null) != null -> {
-                this.imageSrc = pref.getString(imageSrcHeaderString, null)!!
+                this.thumbnail = pref.getString(imageSrcHeaderString, null)!!
             }
             pref.getString(imageSrcHeaderURI, null) != null -> {
-                this.imageSrc = pref.getString(imageSrcHeaderURI, null)!!
+                this.thumbnail = pref.getString(imageSrcHeaderURI, null)!!
             }
             pref.getString(imageSrcHeaderDrawable, null) != null -> {
-                this.imageSrc = pref.getString(imageSrcHeaderDrawable, null)!!
+                this.thumbnail = pref.getString(imageSrcHeaderDrawable, null)!!
             }
         }
 
-        this.roomName = pref.getString(roomNameHeader, null)!!
+        this.roomTitle = pref.getString(roomNameHeader, null)!!
         this.roomStructure = pref.getString(roomStructureHeader, null)!!
-        this.option = pref.getString(optionHeader, null)!!
+        this.options = pref.getString(optionHeader, null)!!
         this.price = pref.getString(priceHeader, null)!!
         this.floorHeight = pref.getString(floorHeightHeader, null)!!
     }
@@ -76,16 +76,16 @@ class FavoriteRoomAttribute() : RoomAttributes() {
     fun saveInfo(pref: SharedPreferences){
         val prefEditor: SharedPreferences.Editor = pref.edit()
 
-        when(this.imageSrc){
+        when(this.thumbnail){
             is String ->{
-                prefEditor.putString(imageSrcHeaderString, this.imageSrc as String)
+                prefEditor.putString(imageSrcHeaderString, this.thumbnail as String)
             }
         }
 
-        prefEditor.putString(roomNameHeader, this.roomName)
+        prefEditor.putString(roomNameHeader, this.roomTitle)
         prefEditor.putString(roomStructureHeader, this.roomStructure)
         prefEditor.putString(priceHeader, this.price)
-        prefEditor.putString(optionHeader, this.option)
+        prefEditor.putString(optionHeader, this.options)
         prefEditor.putString(floorHeightHeader, this.floorHeight)
 
         prefEditor.apply()

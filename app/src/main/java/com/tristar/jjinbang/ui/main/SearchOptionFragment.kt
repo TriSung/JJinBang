@@ -1,4 +1,4 @@
-package com.tristar.jjinbang.ui.setting
+package com.tristar.jjinbang.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

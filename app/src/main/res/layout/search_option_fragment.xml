@@ -276,7 +276,7 @@
                 android:paddingBottom="13.3dp"
 
                 android:columnCount="4"
-                android:rowCount="4" >
+                android:rowCount="6" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -460,6 +460,100 @@
                     android:layout_height="wrap_content"
                     android:layout_column="3"
                     android:layout_row="3"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="9999" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="보증금"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:layout_column="0"
+                    android:layout_row="5"/>
+
+                <LinearLayout
+                    android:layout_row="5"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1.2">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13.3dp"
+                    android:layout_marginEnd="13.3dp"
+                    android:text="~"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    android:layout_row="5"
+                    />
+
+                <LinearLayout
+                    android:layout_row="5"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1">
+                    <EditText
+                        android:background="@drawable/login_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9999"
+                        android:textColor="@color/text"
+                        android:paddingStart="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만원" />
+
+                </LinearLayout>
+
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="6" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_maintenance_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13.3dp"
+                    android:layout_column="1"
+                    android:layout_row="6"
+                    android:layout_columnWeight="1"
+                    android:min="0"
+                    android:max="9999"
+                    android:progress="0"/>
+
+                <SeekBar
+                    android:id="@+id/seekBar_price_maintenance_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13.3dp"
+                    android:layout_column="3"
+                    android:layout_row="6"
                     android:layout_columnWeight="1"
                     android:min="0"
                     android:max="9999"

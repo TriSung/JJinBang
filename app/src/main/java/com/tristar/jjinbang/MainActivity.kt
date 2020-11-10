@@ -11,6 +11,7 @@ import android.util.Log
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.tristar.jjinbang.ui.TempUserData
 import com.tristar.jjinbang.ui.Users
@@ -19,9 +20,14 @@ import kotlin.math.log
 class MainActivity : AppCompatActivity() {
     private lateinit var container: FrameLayout
 
+    private val REQUEST_READ_PHONE_NUMBER = 1
+    private val REQUEST_READ_PHONE_STATE = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+        checkAllPermissions()
 
         val telManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
         if (ActivityCompat.checkSelfPermission(
@@ -34,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         ) {
             return
         }
+
         Data.hardwarePhoneNum = telManager.line1Number
         if(Data.hardwarePhoneNum?.startsWith("+82")!!){
             Data.hardwarePhoneNum = Data.hardwarePhoneNum?.replace("+82", "0")
@@ -70,15 +77,17 @@ class MainActivity : AppCompatActivity() {
                 Data.isRegisteredUser = pref.getBoolean(Data.isRegisteredUserHeader, false)
                 if(Data.isRegisteredUser){
                     var registeredRoomFileList: MutableSet<String> =
-                        pref.getStringSet(Data. registerPrefHeader, null) as MutableSet<String>
+                        pref.getStringSet(Data. registerPrefHeader, setOf("")) as MutableSet<String>
                 }
             }
 
             val favoriteRoomFileList: MutableSet<String> =
-                pref.getStringSet(Data.favoritePrefHeader, null) as MutableSet<String>
+                pref.getStringSet(Data.favoritePrefHeader, setOf("null")) as MutableSet<String>
 
             if(favoriteRoomFileList != null){
                 for(fileName: String in favoriteRoomFileList){
+                    if(fileName == "null")
+                        continue
                     val favoritePref = getSharedPreferences(fileName, Context.MODE_PRIVATE)
                     val favoriteRoomAttr : FavoriteRoomAttribute = FavoriteRoomAttribute(favoritePref)
                     Data.favoriteRoomList.add(favoriteRoomAttr)
@@ -86,6 +95,51 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Data.isDataLoaded = true
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            REQUEST_READ_PHONE_STATE -> {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //We now have permission, restart the app
+                    val intent = getIntent()
+                    finish()
+                    startActivity(intent)
+                } else {
+                }
+                return
+            }
+            REQUEST_READ_PHONE_NUMBER -> {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //We now have permission, restart the app
+                    val intent = getIntent()
+                    finish()
+                    startActivity(intent)
+                } else {
+                }
+                return
+            }
+        }
+    }
+
+    private fun checkAllPermissions() : Boolean{
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.READ_PHONE_STATE),
+                REQUEST_READ_PHONE_STATE)
+            return false
+        }
+        else if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_NUMBERS)
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.READ_PHONE_NUMBERS),
+                REQUEST_READ_PHONE_NUMBER)
+            return false
+        }
+        return true
     }
 
     override fun onDestroy(){

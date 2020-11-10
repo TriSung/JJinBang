@@ -66,11 +66,12 @@ class FavoriteRoomAttribute() : RoomAttributes() {
             }
         }
 
-        this.roomTitle = pref.getString(roomNameHeader, null)!!
-        this.roomStructure = pref.getString(roomStructureHeader, null)!!
-        this.options = pref.getString(optionHeader, null)!!
-        this.price = pref.getString(priceHeader, null)!!
-        this.floorHeight = pref.getString(floorHeightHeader, null)!!
+
+        this.roomTitle = pref.getString(roomNameHeader, "")!!
+        this.roomStructure = pref.getString(roomStructureHeader, "")!!
+        this.options = pref.getString(optionHeader, "")!!
+        this.price = pref.getString(priceHeader, "")!!
+        this.floorHeight = pref.getString(floorHeightHeader, "")!!
     }
 
     fun saveInfo(pref: SharedPreferences){

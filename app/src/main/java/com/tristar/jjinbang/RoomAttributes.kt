@@ -13,7 +13,7 @@ open class RoomAttributes {
     val floor4 : String = "4층"
     val floorOver: String = "5층 이상"
 
-    lateinit var thumbnail: Any
+    var thumbnail: Any? = null
     lateinit var roomTitle: String
     lateinit var price: String
 
@@ -27,19 +27,19 @@ open class RoomAttributes {
 
     lateinit var floorHeight: String
 
-    lateinit var adminArea: String // 도, 특별시, 광역시
-    lateinit var locality: String // 시, 군
-    lateinit var subLocality: String // 구
-    lateinit var thoroughfare: String // 동
-    lateinit var subThoroughfare: String // 번지수
-    lateinit var detailAddress: String // 세부
-
-    var roomLatitude: Double = 0.0
-    var roomLongitude: Double = 0.0
-
-    lateinit var maintenanceFee: String
-
-    lateinit var registeredPerson: String
-
-    var parking: Boolean = false
+//    lateinit var adminArea: String // 도, 특별시, 광역시
+//    lateinit var locality: String // 시, 군
+//    lateinit var subLocality: String // 구
+//    lateinit var thoroughfare: String // 동
+//    lateinit var subThoroughfare: String // 번지수
+//    lateinit var detailAddress: String // 세부
+//
+//    var roomLatitude: Double = 0.0
+//    var roomLongitude: Double = 0.0
+//
+//    lateinit var maintenanceFee: String
+//
+//    lateinit var registeredPerson: String
+//
+//    var parking: Boolean = false
 }

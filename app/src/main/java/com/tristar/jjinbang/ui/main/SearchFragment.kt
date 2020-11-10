@@ -62,7 +62,6 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
     }
     override fun onDestroy() {
         super.onDestroy()
-        mapView.onLowMemory()
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -73,7 +72,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
 
         setOptions.setOnClickListener {
             Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-                MainFragmentDirections.actionMainFragmentToSearchFragment()
+                SearchFragmentDirections.actionSearchFragmentToSearchOptionFragment()
             )
         }
         mapView.onCreate(savedInstanceState)

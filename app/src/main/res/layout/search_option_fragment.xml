@@ -474,10 +474,10 @@
                     android:textStyle="bold"
                     android:textColor="@color/text"
                     android:layout_column="0"
-                    android:layout_row="5"/>
+                    android:layout_row="4"/>
 
                 <LinearLayout
-                    android:layout_row="5"
+                    android:layout_row="4"
                     android:layout_column="1"
                     android:layout_columnWeight="1.2">
                     <EditText
@@ -505,11 +505,11 @@
                     android:textColor="@color/text"
                     android:textStyle="bold"
                     android:layout_column="2"
-                    android:layout_row="5"
+                    android:layout_row="4"
                     />
 
                 <LinearLayout
-                    android:layout_row="5"
+                    android:layout_row="4"
                     android:layout_column="3"
                     android:layout_columnWeight="1">
                     <EditText
@@ -533,7 +533,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
-                    android:layout_row="6" />
+                    android:layout_row="5" />
 
                 <SeekBar
                     android:id="@+id/seekBar_price_maintenance_min"
@@ -541,7 +541,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="13.3dp"
                     android:layout_column="1"
-                    android:layout_row="6"
+                    android:layout_row="5"
                     android:layout_columnWeight="1"
                     android:min="0"
                     android:max="9999"
@@ -553,7 +553,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="13.3dp"
                     android:layout_column="3"
-                    android:layout_row="6"
+                    android:layout_row="5"
                     android:layout_columnWeight="1"
                     android:min="0"
                     android:max="9999"

@@ -52,9 +52,7 @@ class AddrWebviewFragment : Fragment() {
         @JavascriptInterface
         fun setAddress(arg1: String, arg2: String, arg3: String){
             handler.post {
-                val text: String = String.format("(%s), %s, %s", arg1, arg2, arg3)
-                Log.d("TEST", "run: $text")
-                result.text = text
+                RegisterRoomSecondFragment.address_ =String.format("%s %s",arg2, arg3)
                 init_webView()
             }
         }

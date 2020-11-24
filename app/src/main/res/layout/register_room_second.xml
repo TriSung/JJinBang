@@ -26,7 +26,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/edit_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="매물 이름"
@@ -35,6 +34,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/edit_title"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginBottom="13.3dp"
@@ -102,6 +102,7 @@
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     android:hint="평수(m2)"
+                    android:inputType="numberSigned"
                     android:paddingStart="13.3dp" />
 
                 <Button
@@ -151,7 +152,7 @@
                     android:layout_weight="1"
                     android:hint="보증금"
                     android:paddingStart="13.3dp"
-                    android:inputType="number"/>
+                    android:inputType="numberSigned"/>
 
                 <EditText
                     android:id="@+id/edit_rent"
@@ -161,7 +162,7 @@
                     android:layout_weight="1"
                     android:hint="월세"
                     android:paddingStart="13.3dp"
-                    android:inputType="number" />
+                    android:inputType="numberSigned" />
 
                 <EditText
                     android:id="@+id/edit_maintenance"
@@ -171,7 +172,7 @@
                     android:layout_weight="1"
                     android:hint="관리비"
                     android:paddingStart="13.3dp"
-                    android:inputType="number" />
+                    android:inputType="numberSigned" />
             </LinearLayout>
 
             <TextView

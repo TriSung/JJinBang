@@ -1,5 +1,7 @@
 package com.tristar.jjinbang
 
+import com.google.firebase.database.FirebaseDatabase
+
 class RoomAttributes {
     companion object{
         const val room1: String = "원룸"
@@ -37,12 +39,14 @@ class RoomAttributes {
     /**
      * 집 정보
      */
-    lateinit var adminArea: String // 도, 특별시, 광역시
-    var locality: String? = null// 시, 군
-    var subLocality: String? = null// 구
-    lateinit var thoroughfare: String // 동
-    lateinit var subThoroughfare: String // 번지수
-    lateinit var detailAddress: String // 세부
+//    lateinit var adminArea: String // 도, 특별시, 광역시
+//    var locality: String? = null// 시, 군
+//    var subLocality: String? = null// 구
+//    lateinit var thoroughfare: String // 동
+//    lateinit var subThoroughfare: String // 번지수
+//    lateinit var detailAddress: String // 세부
+    lateinit var address: String
+    var detailAddress: String? = null
 
     var roomLatitude: Double = 0.0
     var roomLongitude: Double = 0.0
@@ -55,4 +59,13 @@ class RoomAttributes {
     var roomSize: Float = 0f
 
     lateinit var roomStructure: String // 방 구조
+
+
+    fun saveDb(){
+        var myRef = Data.db.reference.child("test1").child("address")
+        myRef.setValue(address)
+        myRef = Data.db.reference.child("test1").child("detailAddress")
+        myRef.setValue(detailAddress)
+
+    }
 }

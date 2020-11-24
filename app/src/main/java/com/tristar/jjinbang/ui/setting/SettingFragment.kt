@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.tristar.jjinbang.Data
@@ -14,9 +14,15 @@ import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.setting_fragment.*
 
 class SettingFragment : Fragment() {
+
+
     companion object{
         fun newInstance() = SettingFragment()
     }
+
+
+    private val REQUEST_CODE = 0
+    private val imageView: ImageView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,10 +42,20 @@ class SettingFragment : Fragment() {
             setting_logout.visibility = View.INVISIBLE
         }
 
+        setting_select_image.setOnClickListener{ setOnSelectimageListener() }
         setting_go_login.setOnClickListener{ setOnGoLoginBtnClickListener() }
         setting_back.setOnClickListener { setOnGoBackBtnClickListener() }
         setting_logout.setOnClickListener { setOnLogoutBtnClickListener() }
+
     }
+
+    private fun setOnSelectimageListener(){
+        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+            SettingFragmentDirections.actionSettingFragmentToSelectimage()
+        )
+    }
+
+
 
     private fun setOnGoLoginBtnClickListener(){
         if(!Data.isLogin){

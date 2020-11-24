@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     private val REQUEST_READ_PHONE_NUMBER = 1
     private val REQUEST_READ_PHONE_STATE = 2
+    private val REQUEST_CAMERA = 3
+    private val REQUEST_INTERNET = 4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
                 this, Manifest.permission.READ_PHONE_NUMBERS
             ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
                 this, Manifest.permission.READ_PHONE_STATE
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this, Manifest.permission.INTERNET
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             return
@@ -89,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                     if(fileName == "null")
                         continue
                     val favoritePref = getSharedPreferences(fileName, Context.MODE_PRIVATE)
-                    val favoriteRoomAttr : FavoriteRoomAttribute = FavoriteRoomAttribute(favoritePref)
+                    val favoriteRoomAttr : FavoriteRoom = FavoriteRoom(favoritePref)
                     Data.favoriteRoomList.add(favoriteRoomAttr)
                 }
             }
@@ -121,6 +125,24 @@ class MainActivity : AppCompatActivity() {
                 }
                 return
             }
+            REQUEST_CAMERA ->{
+                if(grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    val intent = getIntent()
+                    finish()
+                    startActivity(intent)
+                } else{
+                    return
+                }
+            }
+            REQUEST_INTERNET ->{
+                if(grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    val intent = getIntent()
+                    finish()
+                    startActivity(intent)
+                } else{
+                    return
+                }
+            }
         }
     }
 
@@ -137,6 +159,20 @@ class MainActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.READ_PHONE_NUMBERS),
                 REQUEST_READ_PHONE_NUMBER)
+            return false
+        }
+        else if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.CAMERA),
+                REQUEST_CAMERA)
+            return false
+        }
+        else if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.CAMERA),
+                REQUEST_CAMERA)
             return false
         }
         return true
@@ -163,7 +199,7 @@ class MainActivity : AppCompatActivity() {
                     val fileName = Data.favoritePrefHeader + "_" + ct.toString()
                     favoriteRoomFileSet.add(fileName)
                     val pref = activity?.getSharedPreferences(fileName, Context.MODE_PRIVATE)!!
-                    favoriteRoomAttrs.saveInfo(pref)
+                    //favoriteRoomAttrs.saveInfo(pref)
                     ct += 1
                 }
                 prefEditor.putStringSet(Data.favoritePrefHeader, favoriteRoomFileSet)

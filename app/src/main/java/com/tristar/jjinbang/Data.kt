@@ -1,6 +1,7 @@
 package com.tristar.jjinbang
 
 import android.content.SharedPreferences
+import com.google.firebase.database.FirebaseDatabase
 import com.tristar.jjinbang.ui.TempUserData
 import com.tristar.jjinbang.ui.Users
 import java.util.regex.Pattern
@@ -44,6 +45,9 @@ class Data{
             Users.userList.add(TempUserData(userName!!, userId!!, userPassword!!))
         }
         val options = Options()
+
+        /** DB (Firebase) */
+        val db : FirebaseDatabase = FirebaseDatabase.getInstance()
     }
 }
 

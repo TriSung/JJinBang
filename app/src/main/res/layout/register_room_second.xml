@@ -10,46 +10,437 @@
         android:orientation="vertical"
         android:background="@drawable/background_login"
 
+        android:paddingTop="30dp"
+        android:paddingStart="13.3dp"
+        android:paddingEnd="13.3dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" >
 
-        <ImageView
-            android:id="@+id/thumbnail"
-            android:src="@drawable/app_logo_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp" />
-
         <LinearLayout
+            android:background="@drawable/background_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/edit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="매물 이름"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="13.3dp"
+                android:paddingStart="13.3dp"
+                android:hint="매물 이름 "
+                android:background="@drawable/login_edit" />
+
+            <TextView
+                android:layout_marginBottom="13.3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="집 정보"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_marginBottom="13.3dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:enabled="false"
+                    android:background="@drawable/login_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="주소"
+                    android:paddingStart="13.3dp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/edit_address"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:background="@drawable/button_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주소 검색"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:id="@+id/btn_addressSearch"/>
+            </LinearLayout>
+
+            <EditText
+                android:background="@drawable/login_edit"
+                android:layout_marginBottom="13.3dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="건물 이름"
+                android:paddingStart="13.3dp"
+                android:id="@+id/edit_detailAddress" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="13.3dp">
+
+                <EditText
+                    android:id="@+id/edit_size"
+                    android:background="@drawable/login_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:hint="평수(m2)"
+                    android:paddingStart="13.3dp" />
+
+                <Button
+                    android:id="@+id/btn_floorHeight"
+                    android:background="@drawable/button_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="층수"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <Button
+                    android:id="@+id/btn_roomStructure"
+                    android:background="@drawable/button_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="방 구조"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가격(만원 단위로 입력)"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="13.3dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="13.3dp">
+
+                <EditText
+                    android:id="@+id/edit_deposit"
+                    android:background="@drawable/login_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="보증금"
+                    android:paddingStart="13.3dp"
+                    android:inputType="number"/>
+
+                <EditText
+                    android:id="@+id/edit_rent"
+                    android:background="@drawable/login_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="월세"
+                    android:paddingStart="13.3dp"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/edit_maintenance"
+                    android:background="@drawable/login_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="관리비"
+                    android:paddingStart="13.3dp"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="관리비 외 개인부담 항목"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
 
             <GridLayout
+                android:background="@drawable/border_grid"
+                android:padding="5.5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:layout_marginBottom="13.3dp">
 
-                android:columnCount="3"
-                android:rowCount="3" >
-
-                <EditText
-                    android:layout_width="wrap_content"
+                <CheckBox
+                    android:id="@+id/checkbox_water"
                     android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="수도"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
                     android:layout_column="0"
-                    android:layout_row="0"
-                    android:text="도/특별시/광역시"
-                    android:textColor="@color/text" />
-                <EditText
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_elect"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="전기"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_internet"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="인터넷"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_gas"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="가스"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="옵션"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <GridLayout
+                android:background="@drawable/border_grid"
+                android:padding="5.5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:layout_marginBottom="13.3dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_washingMachine"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="세탁기"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_refrigerator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="냉장고"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_airConditioner"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="에어컨"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_gasRange"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="가스레인지"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_closet"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="옷장"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_deskChair"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="책상/의자"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_parking"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="주차 가능"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="2"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_fullOptions"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:text="풀옵션"
+                    android:textSize="17sp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="2"/>
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상세 설명"
+                android:textSize="20sp"
+                android:textColor="@color/text"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_detail"
+                android:layout_marginBottom="13.3dp"
+                android:paddingEnd="13.3dp"
+                android:paddingStart="13.3dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/login_edit"
+                android:hint="방에 대해 자세히 설명해주세요" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:background="@drawable/button_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="0"
-                    android:text="시/군/구" />
-            </GridLayout>
+                    android:layout_weight="1"
+                    android:text="취소"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_register"
+                    android:background="@drawable/button_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="등록하기"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
 
 

@@ -46,9 +46,6 @@ class SignUpFragment : Fragment(){
 
     private var doubleBackToExitPressedOnce : Boolean = false
 
-
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

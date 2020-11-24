@@ -1,20 +1,17 @@
 package com.tristar.jjinbang.ui.main
 
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.AttributeSet
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.Navigation
 import com.tristar.jjinbang.Data
 import com.tristar.jjinbang.FavoriteRoomAttribute
 import com.tristar.jjinbang.R
+import com.tristar.jjinbang.ui.roomInfo.FavoriteWidget
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
@@ -44,6 +41,8 @@ class MainFragment : Fragment() {
             }else{
                 Toast.makeText(context, "로그인이 필요한 서비스입니다.", Toast.LENGTH_SHORT).show()
             }
+            Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                MainFragmentDirections.actionMainFragmentToRegisterRoomFirstFragment())
         }
 
         main_search.setOnClickListener {
@@ -52,7 +51,6 @@ class MainFragment : Fragment() {
             )
         }
 
-
         /**
          * 1. read favorite list
          * 2. set favorite list
@@ -60,12 +58,18 @@ class MainFragment : Fragment() {
         var ct: Int = 0
         for(roomAttr: FavoriteRoomAttribute in Data.favoriteRoomList){
             if(ct % 2 == 0){
-                val newFavoriteWidget = FavoriteWidget(requireContext())
+                val newFavoriteWidget =
+                    FavoriteWidget(
+                        requireContext()
+                    )
                 newFavoriteWidget.setAttributes(roomAttr)
                 main_linear_favorite.addView(newFavoriteWidget)
             }
             else{
-                val newFavoriteWidget = FavoriteWidget(requireContext())
+                val newFavoriteWidget =
+                    FavoriteWidget(
+                        requireContext()
+                    )
                 newFavoriteWidget.setAttributes(roomAttr)
                 main_linear_favorite2.addView(newFavoriteWidget)
             }

@@ -1,4 +1,4 @@
-package com.tristar.jjinbang.ui.main
+package com.tristar.jjinbang.ui.search
 
 import android.graphics.Color
 import android.location.Address

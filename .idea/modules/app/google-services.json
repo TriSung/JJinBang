@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "83541536886",
+    "firebase_url": "https://jjinbang-7154e.firebaseio.com",
+    "project_id": "jjinbang-7154e",
+    "storage_bucket": "jjinbang-7154e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83541536886:android:26f5e3241f8dae78acef57",
+        "android_client_info": {
+          "package_name": "com.tristar.jjinbang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83541536886-teckiohul2pl5c8pf4u6aqlh3elcg868.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tristar.jjinbang",
+            "certificate_hash": "7ca7dbdbc773a10b16003cb443f805d466e2dac1"
+          }
+        },
+        {
+          "client_id": "83541536886-4jnotnms9tr0e0l5l92luh1v7relvgt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnZR5dsPF4GswD9t9mCJ46aONhovu4fbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83541536886-4jnotnms9tr0e0l5l92luh1v7relvgt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

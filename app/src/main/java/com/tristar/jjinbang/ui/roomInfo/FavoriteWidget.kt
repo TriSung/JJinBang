@@ -1,4 +1,4 @@
-package com.tristar.jjinbang.ui.main
+package com.tristar.jjinbang.ui.roomInfo
 
 import android.content.Context
 import android.content.res.TypedArray
@@ -34,8 +34,7 @@ class FavoriteWidget : ConstraintLayout {
         }
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int):
-            super(context, attrs, defStyleAttr){
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int): super(context, attrs, defStyleAttr){
         initLayout()
         if(attrs != null){
             getAttrs(attrs, defStyleAttr)

@@ -10,7 +10,7 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="180dp"
         android:id="@+id/FrameLayout"
         android:background="@drawable/background_main"
 
@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="21.4dp"
             android:layout_marginTop="21.4dp"
+            android:layout_marginBottom="21.4dp"
             android:layout_gravity="center"
 
             android:fontFamily="@font/nexon_2_gothic_light"
@@ -135,6 +136,7 @@
                 android:id="@+id/main_scrollview_favorite" >
 
                 <GridLayout
+                    android:id="@+id/main_grid_favorite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:columnCount="1"

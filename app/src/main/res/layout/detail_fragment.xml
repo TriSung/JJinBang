@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_login"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="13.3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="13.3dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="타이틀"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="13.3dp" />
+
+                <Button
+                    android:id="@+id/btn_addFavorite"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/favorite"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_gravity="end" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:src="@drawable/app_logo_color"
+                android:id="@+id/image_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="270dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="옵션"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="13.3dp" />
+
+            <GridLayout
+                android:background="@drawable/border_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/grid_option"
+                android:columnCount="3"
+                android:rowCount="3">
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <com.google.android.gms.maps.MapView
+                android:layout_marginBottom="13.3dp"
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                tools:context=".MapsActivity"
+                android:name="com.google.android.gms.maps.MapFragment"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상세설명"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/text_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -119,21 +119,58 @@
     </fragment>
     <fragment
         android:id="@+id/searchOptionFragment"
-        android:name="com.tristar.jjinbang.ui.main.SearchOptionFragment"
+        android:name="com.tristar.jjinbang.ui.search.SearchOptionFragment"
         android:label="SearchOptionFragment"
         tools:layout="@layout/search_option_fragment"/>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.tristar.jjinbang.ui.main.SearchFragment"
+        android:name="com.tristar.jjinbang.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/maps_fragment">
         <action
             android:id="@+id/action_searchFragment_to_searchOptionFragment"
             app:destination="@id/searchOptionFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_roomDetailFragment"
+            app:destination="@id/roomDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerRoomFirstFragment"
         android:name="com.tristar.jjinbang.ui.register.RegisterRoomFirstFragment"
         android:label="RegisterRoomFirstFragment"
-        tools:layout="@layout/register_room_first" />
+        tools:layout="@layout/register_room_first" >
+        <action
+            android:id="@+id/action_registerRoomFirstFragment_to_registerRoomSecondFragment"
+            app:destination="@id/registerRoomSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerRoomSecondFragment"
+        android:name="com.tristar.jjinbang.ui.register.RegisterRoomSecondFragment"
+        android:label="RegisterRoomSecondFragment"
+        tools:layout="@layout/register_room_second">
+        <action
+            android:id="@+id/action_registerRoomSecondFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_registerRoomSecondFragment_to_addrWebviewFragment"
+            app:destination="@id/addrWebviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomDetailFragment"
+        android:name="com.tristar.jjinbang.ui.roomInfo.RoomDetailFragment"
+        android:label="RoomDetailFragment"
+        tools:layout="@layout/detail_fragment"/>
+    <fragment
+        android:id="@+id/addrWebviewFragment"
+        android:name="com.tristar.jjinbang.ui.register.AddrWebviewFragment"
+        android:label="AddrWebviewFragment"
+        tools:layout="@layout/addr_webview_fragment">
+        <action
+            android:id="@+id/action_addrWebviewFragment_to_registerRoomSecondFragment"
+            app:destination="@id/registerRoomSecondFragment"
+            app:popUpTo="@id/registerRoomSecondFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>

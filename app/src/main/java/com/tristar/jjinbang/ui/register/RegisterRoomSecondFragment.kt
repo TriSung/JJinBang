@@ -88,7 +88,7 @@ class RegisterRoomSecondFragment : Fragment() {
                 return super.cancel()
             }
         }
-        timer.schedule(timerTask,1000)
+        timer.schedule(timerTask,20000)
 
         val inputMethodManager : InputMethodManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 

@@ -50,9 +50,9 @@ class SettingFragment : Fragment() {
     }
 
     private fun setOnSelectimageListener(){
-        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-            SettingFragmentDirections.actionSettingFragmentToSelectimage()
-        )
+//        Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+//            SettingFragmentDirections.actionSettingFragmentToSelectimage()
+//        )
     }
 
 

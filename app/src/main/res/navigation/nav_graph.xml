@@ -35,9 +35,6 @@
         <action
             android:id="@+id/action_settingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_settingFragment_to_selectimage"
-            app:destination="@id/SelectImage" />
     </fragment>
 
     <fragment
@@ -60,7 +57,7 @@
 
     <fragment
         android:id="@+id/SelectImage"
-        android:name="com.tristar.jjinbang.ui.setting.login.Selectimage"
+        android:name="com.tristar.jjinbang.ui.register.Selectimage"
         android:label="SelectImage"
         tools:layout="@layout/selectimage">
     </fragment>
@@ -142,6 +139,9 @@
         <action
             android:id="@+id/action_registerRoomFirstFragment_to_registerRoomSecondFragment"
             app:destination="@id/registerRoomSecondFragment" />
+        <action
+            android:id="@+id/action_registerRoomFirstFragment_to_SelectImage"
+            app:destination="@id/SelectImage" />
     </fragment>
     <fragment
         android:id="@+id/registerRoomSecondFragment"

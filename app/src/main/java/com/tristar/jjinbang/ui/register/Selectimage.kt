@@ -1,4 +1,4 @@
-package com.tristar.jjinbang.ui.setting.login
+package com.tristar.jjinbang.ui.register
 
 import android.app.Activity
 import android.content.Intent
@@ -15,38 +15,26 @@ import com.tristar.jjinbang.R
 import kotlinx.android.synthetic.main.selectimage.*
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
-import java.util.*
 
-import android.app.DownloadManager
 import android.content.Context
-
-import android.content.pm.PackageManager
 
 import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.util.Base64
-import android.widget.Button
 import androidx.core.graphics.drawable.toBitmap
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
-import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import kotlinx.android.synthetic.main.register_room_first.*
 
-import okhttp3.Callback
 import okhttp3.ResponseBody
 import retrofit2.Call
 
 
 import java.io.InputStream
-import java.util.*
 import kotlin.collections.HashMap
-import kotlin.collections.Map as Map1
 
 class Selectimage : Fragment() {
     companion object {

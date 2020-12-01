@@ -62,10 +62,18 @@ class RoomAttributes {
 
 
     fun saveDb(){
-        var myRef = Data.db.reference.child("test1").child("address")
-        myRef.setValue(address)
-        myRef = Data.db.reference.child("test1").child("detailAddress")
+        var myRef = Data.db.reference.child(this.hashCode().toString()).child("title")
+        myRef.setValue(roomTitle)
+        myRef = Data.db.reference.child(this.hashCode().toString()).child("address")
         myRef.setValue(detailAddress)
+        myRef = Data.db.reference.child(this.hashCode().toString()).child("detailAddress")
+        myRef.setValue(detailAddress)
+        myRef = Data.db.reference.child(this.hashCode().toString()).child("deposit")
+        myRef.setValue(deposit)
+        myRef = Data.db.reference.child(this.hashCode().toString()).child("rent")
+        myRef.setValue(rent)
+        myRef = Data.db.reference.child(this.hashCode().toString()).child("roomSize")
+        myRef.setValue(roomSize)
 
     }
 }

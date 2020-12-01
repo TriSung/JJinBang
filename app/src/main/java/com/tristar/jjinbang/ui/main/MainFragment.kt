@@ -34,7 +34,12 @@ class MainFragment : Fragment() {
                 MainFragmentDirections.actionMainFragmentToSettingFragment()
             )
         }
-        
+        main_find_room.setOnClickListener {
+            Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                MainFragmentDirections.actionMainFragmentToSearchFragment()
+            )
+        }
+
         main_register_room.setOnClickListener { 
             if(Data.isLogin){
                 Toast.makeText(context, "준비중입니다.", Toast.LENGTH_SHORT).show()

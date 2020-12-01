@@ -1,17 +1,12 @@
-package com.tristar.jjinbang.ui.setting.login
+package com.tristar.jjinbang.ui.register
 
-import android.graphics.Bitmap
-import android.util.Base64.encodeToString
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import java.io.ByteArrayOutputStream
-import java.util.*
 
 class API {
     interface APIService {
@@ -29,7 +24,8 @@ class API {
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
 
-        var service = retrofit.create(APIService::class.java)
+        var service = retrofit.create(
+            APIService::class.java)
     }
 
 }

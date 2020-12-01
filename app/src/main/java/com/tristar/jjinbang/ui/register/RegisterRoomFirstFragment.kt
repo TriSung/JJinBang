@@ -89,6 +89,7 @@ class RegisterRoomFirstFragment : Fragment() {
             val imgUri : Uri = data?.data as Uri
             val imgBitmap : Bitmap? = getBitmap(requireContext(), imgUri)
             view_camera.setImageBitmap(imgBitmap)
+            // API 불러오는 코드
             Log.d("TEST", "onActivityResult: $imgUri")
             Log.d("TEST", "onActivityResult: $imgBitmap")
         }

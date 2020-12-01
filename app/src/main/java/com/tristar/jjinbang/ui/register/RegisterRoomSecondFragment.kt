@@ -99,7 +99,7 @@ class RegisterRoomSecondFragment : Fragment() {
             imageView2.layoutParams = lp
 
             val btn = Button(requireContext())
-            btn.setText("Test")
+            btn.setText("3D로 살펴보기")
 
             btn.setOnClickListener {
                 //Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(

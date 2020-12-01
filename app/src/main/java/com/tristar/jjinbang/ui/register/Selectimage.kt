@@ -1,5 +1,6 @@
 package com.tristar.jjinbang.ui.register
 
+import com.tristar.jjinbang.ui.register.Selectimage.Companion
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
@@ -24,15 +25,16 @@ import android.net.Uri
 import android.os.Build
 import android.util.Base64
 import androidx.core.graphics.drawable.toBitmap
-import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
 
+import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import retrofit2.Call
-
-
+import retrofit2.Callback
+import retrofit2.Response
+import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
 import java.io.InputStream
 import kotlin.collections.HashMap
 
@@ -79,9 +81,25 @@ class Selectimage : Fragment() {
     }
 
 
-
-
     private fun postRequest() {
+        val jsonObj = JsonObject()
+        jsonObj.addProperty("msg", "사진을 서버로 보내는 중...")
+        Toast.makeText(context, "사진을 서버로 보내는 중...", Toast.LENGTH_LONG).show()
+
+        API.service.postName(jsonObj).enqueue(object : Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                println("POST Throwable EXCEPTION:: " + t.message)
+                Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    val msg = response.body()?.string()
+                    println("POST msg from server :: " + msg)
+                    Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+                }
+            }
+        })
 
         if (cond == 3) {
             val bitmap: Bitmap? = imageview?.drawable?.toBitmap()
@@ -148,25 +166,12 @@ class Selectimage : Fragment() {
                 //call: Call<ResponseBody>,
                 response: Response<ResponseBody>
             ) {
-                if (response.isSuccess) {
+                if (response.isSuccessful) {
                     //val file = response.body()?.byteStream()
                 }
             }
 
 
-            val stringRequest = object : StringRequest(Request.Method.POST, postURL,
-                Response.Listener<String> { response ->
-                    Toast.makeText(context, response, Toast.LENGTH_LONG).show()
-                }, Response.ErrorListener { error ->
-                    Toast.makeText(context, "Error: ${error.toString()}", Toast.LENGTH_LONG).show()
-                }) {
-                override fun getParams(): HashMap<String, String> {
-                    val params = HashMap<String, String>()
-                    //val imageData = imageToString(bitmap)
-                    //params.put("image", imageData)
-                    return params
-                }
-            }
             //requestQueue.add(stringRequest)
 
 

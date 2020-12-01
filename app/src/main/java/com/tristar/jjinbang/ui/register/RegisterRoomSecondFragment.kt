@@ -1,5 +1,7 @@
 package com.tristar.jjinbang.ui.register
 
+import com.tristar.jjinbang.ui.register.Selectimage.Companion
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -22,9 +24,14 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.google.gson.JsonObject
 import com.tristar.jjinbang.R
 import com.tristar.jjinbang.RoomAttributes
 import kotlinx.android.synthetic.main.register_room_second.*
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class RegisterRoomSecondFragment : Fragment() {
@@ -56,6 +63,28 @@ class RegisterRoomSecondFragment : Fragment() {
     private var subThoroughfare_: String? = null
     private var isFirst = true
     val timer = Timer()
+
+    private fun postRequest() {
+        val jsonObj = JsonObject()
+        jsonObj.addProperty("msg", "사진을 서버로 보내는 중...")
+
+        API.service.postName(jsonObj).enqueue(object : Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                println("POST Throwable EXCEPTION:: " + t.message)
+                Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    val msg = response.body()?.string()
+                    println("POST msg from server :: " + msg)
+                    Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+                }
+            }
+        })
+    }
+
+
 
     val handler: Handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
@@ -116,6 +145,7 @@ class RegisterRoomSecondFragment : Fragment() {
             imageView.layoutParams = lp
             Glide.with(this).load(R.raw.loading_animation).into(imageView)
             timer.schedule(timerTask,15000)
+            postRequest()
         }
         else{
             timer.schedule(timerTask, 100)

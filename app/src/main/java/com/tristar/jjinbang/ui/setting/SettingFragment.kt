@@ -42,7 +42,7 @@ class SettingFragment : Fragment() {
             setting_logout.visibility = View.INVISIBLE
         }
 
-        setting_select_image.setOnClickListener{ setOnSelectimageListener() }
+        //setting_select_image.setOnClickListener{ setOnSelectimageListener() }
         setting_go_login.setOnClickListener{ setOnGoLoginBtnClickListener() }
         setting_back.setOnClickListener { setOnGoBackBtnClickListener() }
         setting_logout.setOnClickListener { setOnLogoutBtnClickListener() }

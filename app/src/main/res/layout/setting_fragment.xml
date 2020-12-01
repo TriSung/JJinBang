@@ -132,17 +132,14 @@
 
 
         //여기서부터추가
-        </LinearLayout>
+        </LinearLayout><![CDATA[
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-            <Button
-                android:id="@+id/setting_select_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Select Image"
-                android:onClick="selectImage"/>
+
+
+        ]]>
 
         <View
             android:id="@+id/divider1"

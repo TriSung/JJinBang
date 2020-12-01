@@ -1,6 +1,7 @@
 package com.tristar.jjinbang.ui.register
 
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -15,7 +16,7 @@ class API {
 
         @Headers("Content-type: application/json")
         @POST("/api/postName")
-        fun postName(@Body body: JSONObject): Call<ResponseBody>
+        fun postName(@Body body: JsonObject): Call<ResponseBody>
     }
 
     companion object {

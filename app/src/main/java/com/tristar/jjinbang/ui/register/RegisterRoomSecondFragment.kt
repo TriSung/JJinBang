@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -51,17 +52,31 @@ class RegisterRoomSecondFragment : Fragment() {
     private var subLocality_: String? = null
     private var thoroughfare_: String? = null
     private var subThoroughfare_: String? = null
+    private var isFirst = true
     val timer = Timer()
 
     val handler: Handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
-            // roomImage에 addView로 3D  뷰어 추가하면 됨
+            // roomImage에 addView 3D  뷰어 추가하면 됨
             roomImage?.removeAllViews()
             val imageView2 = ImageView(requireContext())
             imageView2.setImageResource(R.drawable.app_logo_color)
-            val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+            val lp2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT)
             roomImage.addView(imageView2)
             imageView2.layoutParams = lp
+
+            val btn = Button(requireContext())
+            btn.setText("Test")
+
+            btn.setOnClickListener {
+                Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                    RegisterRoomSecondFragmentDirections.actionRegisterRoomSecondFragmentToTestFragment()
+                )
+            }
+            roomImage.addView(btn)
+            btn.layoutParams = lp2
         }
     }
 
@@ -70,25 +85,34 @@ class RegisterRoomSecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var imageView = ImageView(requireContext())
-        val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        roomImage.addView(imageView)
-        imageView.layoutParams = lp
-        Glide.with(this).load(R.raw.loading_animation).into(imageView)
-        val fragment_ = this
         val timerTask : TimerTask = object : TimerTask(){
             override fun run(){
                 val msg: Message = handler.obtainMessage()
                 handler.sendMessage(msg)
+                isFirst = false
                 cancel()
             }
 
             override fun cancel(): Boolean {
                 Log.d("TEST", "cancel: end")
+
                 return super.cancel()
             }
         }
-        timer.schedule(timerTask,20000)
+
+        var imageView = ImageView(requireContext())
+        if(isFirst){
+            val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            roomImage.addView(imageView)
+            imageView.layoutParams = lp
+            Glide.with(this).load(R.raw.loading_animation).into(imageView)
+            timer.schedule(timerTask,20000)
+        }
+        else{
+            timer.schedule(timerTask, 100)
+        }
+
+
 
         val inputMethodManager : InputMethodManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 

@@ -1,6 +1,7 @@
 package com.tristar.jjinbang.ui.register
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +9,7 @@ import android.os.Message
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,9 +62,9 @@ class RegisterRoomSecondFragment : Fragment() {
             // roomImage에 addView 3D  뷰어 추가하면 됨
             roomImage?.removeAllViews()
             val imageView2 = ImageView(requireContext())
-            imageView2.setImageResource(R.drawable.app_logo_color)
+            imageView2.setImageResource(R.drawable.roomcapture)
             val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-
+            lp.height = 480
             val lp2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT)
             roomImage.addView(imageView2)
             imageView2.layoutParams = lp
@@ -71,12 +73,19 @@ class RegisterRoomSecondFragment : Fragment() {
             btn.setText("Test")
 
             btn.setOnClickListener {
-                Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
-                    RegisterRoomSecondFragmentDirections.actionRegisterRoomSecondFragmentToTestFragment()
-                )
+                //Navigation.findNavController(requireActivity(), R.id.fragment_container).navigate(
+                //    RegisterRoomSecondFragmentDirections.actionRegisterRoomSecondFragmentToTestFragment()
+                //)
+                val launchIntent: Intent? =
+                    context?.packageManager?.getLaunchIntentForPackage("org.andresoviedo.dddmodel2")
+                launchIntent?.let { startActivity(it) }
+
+
+
             }
             roomImage.addView(btn)
             btn.layoutParams = lp2
+            lp2.gravity = Gravity.CENTER_HORIZONTAL
         }
     }
 
@@ -94,7 +103,7 @@ class RegisterRoomSecondFragment : Fragment() {
             }
 
             override fun cancel(): Boolean {
-                Log.d("TEST", "cancel: end")
+                Log.d("3D로 살펴보기", "cancel: end")
 
                 return super.cancel()
             }
@@ -106,7 +115,7 @@ class RegisterRoomSecondFragment : Fragment() {
             roomImage.addView(imageView)
             imageView.layoutParams = lp
             Glide.with(this).load(R.raw.loading_animation).into(imageView)
-            timer.schedule(timerTask,20000)
+            timer.schedule(timerTask,15000)
         }
         else{
             timer.schedule(timerTask, 100)
